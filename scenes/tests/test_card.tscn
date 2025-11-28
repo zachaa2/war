@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c86ws40l3ronr"]
+
+[ext_resource type="Script" uid="uid://tyiwknjuouub" path="res://scripts/tests/test_card.gd" id="1_w2e15"]
+[ext_resource type="PackedScene" uid="uid://ln2gpot83mex" path="res://scenes/card.tscn" id="2_jxl8a"]
+
+[node name="TestCard" type="Node2D"]
+script = ExtResource("1_w2e15")
+
+[node name="Card" parent="." instance=ExtResource("2_jxl8a")]
+position = Vector2(505, 229)
+suit = 1
+value = 5
