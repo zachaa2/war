@@ -19,13 +19,20 @@ func get_texture(texture_suit: GameManager.CardSuit, texture_val: int):
 	elif texture_suit == GameManager.CardSuit.SPADE:
 		path = "res://assets/cards/spades/%02d_4.png" % texture_val
 	else: # ERROR
-		return ""
+		path = ""
 	return load(path)
 	
+func update_sprite():
+	$CardSprite.texture = get_texture(suit, value)
+
+func flip():
+	# TODO: should have an actual flip animation using the animation player or something
+	flipped = !flipped
+	update_sprite()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CardSprite.texture = get_texture(suit, value)
+	update_sprite()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
